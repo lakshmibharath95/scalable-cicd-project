@@ -1,23 +1,3 @@
-pipeline {
-  agent any
-
-  environment {
-    IMAGE_NAME = "node-app"
-    IMAGE_TAG = "${BUILD_NUMBER}"
-  }
-
-  stages {
-
-    stage('Checkout') {
-      steps {
-        git 'https://github.com/YOUR_USERNAME/scalable-cicd-project.git'
-      }
-    }
-
-    stage('Detect Environment') {
-      steps {
-        script {
-          ENV = (env.BRANCH_NAME == "main") ? "prod" : "dev"
         }
       }
     }
